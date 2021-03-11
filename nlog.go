@@ -167,7 +167,7 @@ func (n *NLog) Errorf(format string, v ...interface{}) {
 // Errorln prints error messages. They will appear on logging level nlog.LOG_ERROR and higher. Handles arguments in the same manner
 // as log.Println.
 func (n *NLog) Errorln(v ...interface{}) {
-	if n.loglLevel >= LOG_ERROR {
+	if n.logLevel >= LOG_ERROR {
 		n.ErrorLogger.Println(v...)
 	}
 }
