@@ -1,6 +1,6 @@
 // Package nlog  provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
-// Nlog produces output to io.Writer and supports eight logging levels: emergency, alert, critical, error, warning, notice, 
-// informational and debug. Each  package logging object instance, NLog, has its own logging level and will print only messages with 
+// Nlog produces output to io.Writer and supports eight logging levels: emergency, alert, critical, error, warning, notice,
+// informational and debug. Each  package logging object instance, NLog, has its own logging level and will print only messages with
 // equal or higher severity.
 // Package provides convinient wrappers around standard log.Logger's Print, Println and Printf methods for each severity level.
 //
@@ -16,7 +16,7 @@
 //	)
 //
 //	func main() {
-//		// Create NLog instance with informational logging level (i.e. log everything except debug messages) and 
+//		// Create NLog instance with informational logging level (i.e. log everything except debug messages) and
 //		// with output directed to console
 //		logger, err := nlog.New(nlog.LOG_INFO, os.Stdout)
 //		if err != nil {
@@ -45,7 +45,7 @@
 //
 // Example - advanced usage
 //
-// Now let's make our task a little bit more intricate. Suppose we want to make timestamps of debug messages more precise and send 
+// Now let's make our task a little bit more intricate. Suppose we want to make timestamps of debug messages more precise and send
 // those messages to the separate destination, say, text file. Messages of all other severities will go to the console, just as before.
 //
 //	package main
