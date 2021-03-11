@@ -1,4 +1,4 @@
-# nlog
+# nlog [![Go Reference](https://pkg.go.dev/badge/github.com/lereinth/nlog.svg)](https://pkg.go.dev/github.com/lereinth/nlog)
 Package nlog  provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
 Nlog produces output to `io.Writer` and supports eight logging levels: emergency, alert, critical, error, warning, notice, 
 informational and debug. Each  package logging object instance, `NLog`, has its own logging level and will print only messages with 
