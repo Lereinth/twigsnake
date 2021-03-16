@@ -1,4 +1,4 @@
-# twigsnake [![Go Reference](https://pkg.go.dev/badge/github.com/lereinth/twigsnake.svg)](https://pkg.go.dev/github.com/lereinth/twigsnake)
+# twigsnake [![Go Reference](https://pkg.go.dev/badge/github.com/lereinth/twigsnake.svg)](https://pkg.go.dev/github.com/lereinth/twigsnake) [![Go Report Cad](https://goreportcard.com/badge/github.com/lereinth/twigsnake)](https://goreportcard.com/report/github.com/lereinth/twigsnake)
 Package twigsnake provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
 Twigsnake produces output to `io.Writer` and supports eight logging levels: emergency, alert, critical, error, warning, notice,
 informational and debug. Each  package logging object instance, `twigsnake.Logger`, has its own logging level and will print only
