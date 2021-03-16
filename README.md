@@ -1,26 +1,26 @@
-# nlog [![Go Reference](https://pkg.go.dev/badge/github.com/lereinth/nlog.svg)](https://pkg.go.dev/github.com/lereinth/nlog)
-Package nlog  provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
-Nlog produces output to `io.Writer` and supports eight logging levels: emergency, alert, critical, error, warning, notice, 
-informational and debug. Each  package logging object instance, `NLog`, has its own logging level and will print only messages with 
-equal or higher severity.
+# twigsnake [![Go Reference](https://pkg.go.dev/badge/github.com/lereinth/twigsnake.svg)](https://pkg.go.dev/github.com/lereinth/twigsnake)
+Package twigsnake provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
+Twigsnake produces output to `io.Writer` and supports eight logging levels: emergency, alert, critical, error, warning, notice,
+informational and debug. Each  package logging object instance, `twigsnake.Logger`, has its own logging level and will print only
+messages with equal or higher severity.
 Package provides convinient wrappers around standard `log.Logger`'s `Print`, `Println` and `Printf` methods for each severity level.
 
 ### Example: basic usage
 
-In this example we will stick to defaults: create `NLog` logger without any customization and log some stuff with it.
+In this example we will stick to defaults: create `twigsnake.Logger` without any customization and log some stuff with it.
 
 ```go
 package main
 
 import (
-	"github.com/lereinth/nlog"
+	"github.com/lereinth/twigsnake"
 	"os"
 )
 
 func main() {
-	// Create NLog instance with informational logging level (i.e. log everything except debug messages) and 
+	// Create twigsnake.Logger instance with informational logging level (i.e. log everything except debug messages) and
 	// with output directed to console
-	logger, err := nlog.New(nlog.LOG_INFO, os.Stdout)
+	logger, err := twigsnake.New(twigsnake.LOG_INFO, os.Stdout)
 	if err != nil {
 		panic(err)
 	}
@@ -31,7 +31,7 @@ func main() {
 	logger.Debugln("This debug message won't appear")
 
 	// Change current severity level
-	err = logger.SetLogLevel(nlog.LOG_DEBUG)
+	err = logger.SetLogLevel(twigsnake.LOG_DEBUG)
 	if err != nil {
 		logger.Errorln("Failed to change logging level:", err)
 	}
@@ -48,21 +48,21 @@ This code will print following lines to the console:
 ```
 ### Example: advanced usage
 
-Now let's make our task a little bit more intricate. Suppose we want to make timestamps of debug messages more precise and send 
+Now let's make our task a little bit more intricate. Suppose we want to make timestamps of debug messages more precise and send
 those messages to the separate destination, say, text file. Messages of all other severities will go to the console, just as before.
 
 ```go
 package main
 
 import (
-	"github.com/lereinth/nlog"
+	"github.com/lereinth/twigsnake"
 	"log"
 	"os"
 )
 
 func main() {
-	// Create NLog instance, just like in the previous example
-	logger, err := nlog.New(nlog.LOG_DEBUG, os.Stdout)
+	// Create twigsnake.Logger instance, just like in the previous example
+	logger, err := twigsnake.New(twigsnake.LOG_DEBUG, os.Stdout)
 	if err != nil {
 		panic(err)
 	}

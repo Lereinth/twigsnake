@@ -1,24 +1,26 @@
-// Package nlog  provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with minimum overhead.
-// Nlog produces output to io.Writer and supports eight logging levels: emergency, alert, critical, error, warning, notice,
-// informational and debug. Each  package logging object instance, NLog, has its own logging level and will print only messages with
-// equal or higher severity.
+// Package twigsnake  provides a minimalistic wrapper for standard logger, allowing you to implement leveled logging with
+// minimum overhead.
+//
+// Twigsnake produces output to io.Writer and supports eight logging levels: emergency, alert, critical, error, warning, notice,
+// informational and debug. Each package logging object instance, twigsnake.Logger, has its own logging level and will print only
+// messages with equal or higher severity.
 // Package provides convinient wrappers around standard log.Logger's Print, Println and Printf methods for each severity level.
 //
 // Example - basic usage
 //
-// In this example we will stick to defaults: create NLog logger without any customization and log some stuff with it.
+// In this example we will stick to defaults: create twigsnake.Logger without any customization and log some stuff with it.
 //
 //	package main
 //
 //	import (
-//		"github.com/lereinth/nlog"
+//		"github.com/lereinth/twigsnake"
 //		"os"
 //	)
 //
 //	func main() {
-//		// Create NLog instance with informational logging level (i.e. log everything except debug messages) and
+//		// Create twigsnake.Logger instance with informational logging level (i.e. log everything except debug messages) and
 //		// with output directed to console
-//		logger, err := nlog.New(nlog.LOG_INFO, os.Stdout)
+//		logger, err := twigsnake.New(twigsnake.LOG_INFO, os.Stdout)
 //		if err != nil {
 //			panic(err)
 //		}
@@ -29,7 +31,7 @@
 //		logger.Debugln("This debug message won't appear")
 //
 //		// Change current severity level
-//		err = logger.SetLogLevel(nlog.LOG_DEBUG)
+//		err = logger.SetLogLevel(twigsnake.LOG_DEBUG)
 //		if err != nil {
 //			logger.Errorln("Failed to change logging level:", err)
 //		}
@@ -51,14 +53,14 @@
 //	package main
 //
 //	import (
-//		"github.com/lereinth/nlog"
+//		"github.com/lereinth/twigsnake"
 //		"log"
 //		"os"
 //	)
 //
 //	func main() {
-//		// Create NLog instance, just like in the previous example
-//		logger, err := nlog.New(nlog.LOG_DEBUG, os.Stdout)
+//		// Create twigsnake.Logger instance, just like in the previous example
+//		logger, err := twigsnake.New(twigsnake.LOG_DEBUG, os.Stdout)
 //		if err != nil {
 //			panic(err)
 //		}
@@ -89,4 +91,4 @@
 //
 // Meanwhile in debug.log the next entry will appear:
 //	2021/03/05 16:21:32.100005 Debug message
-package nlog
+package twigsnake
